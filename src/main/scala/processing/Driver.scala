@@ -19,7 +19,8 @@ object Driver {
 
     val graphF: Graph[Node] = (x: Node) => graph(x)
     val nodesInPath = shortestPath(graphF)(sourceNode, destNode).getOrElse(List())
-    nodesInPath.sliding(2, 1).toList.foldLeft(0.0){ (acc: Double, i) => acc + Edge("", i.head, i.last).weight }
+    nodesInPath
+    //nodesInPath.sliding(2, 1).toList.foldLeft(0.0){ (acc: Double, i) => acc + Edge("", i.head, i.last).weight }
   }
 
   def deactivateEdge(edges: List[Edge])(source: String, destination: String) = {
